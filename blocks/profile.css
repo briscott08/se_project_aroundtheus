@@ -35,7 +35,6 @@
 }
 
 .profile__button-edit {
-  display: grid;
   background-color: transparent;
   background-image: url(../images/edit.svg);
   background-repeat: no-repeat;
@@ -46,7 +45,6 @@
   grid-area: button;
   align-self: center;
   transition: opacity 0.2s linear;
-  column-gap: 6px 0px 0px 10px;
 }
 
 .profile__button-edit:hover {
