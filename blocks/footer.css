@@ -5,13 +5,9 @@
   line-height: 22px;
   margin-top: 0;
   max-width: 1200px;
-}
-@media screen and (max-width: 1500px) {
-  .footer__copyright {
-    padding: 67px 762px 60px 200px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  padding: 67px 762px 60px 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 400px) {
