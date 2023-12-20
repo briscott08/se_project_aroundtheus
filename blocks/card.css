@@ -21,6 +21,10 @@
 
 .card__name {
   margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__like-button {

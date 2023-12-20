@@ -9,3 +9,6 @@
   height: 33px;
   flex-shrink: 0;
 }
+
+@media screen and (max-width: 400px) {
+}
