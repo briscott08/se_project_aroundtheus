@@ -10,5 +10,36 @@
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 950px) {
+  .header {
+    margin-top: 28px;
+  }
+
+  .header__logo {
+    margin: 0px 160px 0px 11px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header {
+    margin-top: 28px;
+  }
+  .header__logo {
+    margin: 0px 50px 0px 27px;
+    width: 126px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    margin-top: 28px;
+  }
+
+  .header__logo {
+    margin: 0px 25px 0px 15px;
+    width: 126px;
+    height: 24px;
+    flex-shrink: 0;
+  }
 }
