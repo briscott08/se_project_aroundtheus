@@ -23,6 +23,7 @@
 @media screen and (max-width: 380px) {
   .header {
     margin-top: 28px;
+    padding-bottom: 32px;
   }
   .header__logo {
     margin: 0px 50px 0px 27px;
@@ -34,10 +35,12 @@
 @media screen and (max-width: 320px) {
   .header {
     margin-top: 28px;
+    padding-bottom: 32px;
   }
 
   .header__logo {
     margin: 0px 25px 0px 15px;
+
     width: 126px;
     height: 24px;
     flex-shrink: 0;
