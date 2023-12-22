@@ -82,7 +82,17 @@
   opacity: 0.6;
   cursor: pointer;
 }
-
+@media screen and (min-width: 911px) {
+  .profile__info {
+    display: grid;
+    grid-template-areas:
+      "title button"
+      "description description";
+    gap: 14px 10px;
+    padding-top: 26px;
+    padding-left: 20px;
+  }
+}
 @media screen and (max-width: 910px) {
   .profile {
     flex-direction: column;
