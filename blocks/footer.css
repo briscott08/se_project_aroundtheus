@@ -25,7 +25,6 @@
 
   .footer__paragraph {
     padding: 48px 41px 36px 20px;
-    font-family: "Inter", Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -34,10 +33,6 @@
 }
 
 @media screen and (max-width: 500px) {
-  .footer {
-    grid-template-columns: 0.7fr;
-  }
-
   .footer__paragraph {
     padding: 48px 0px 36px 0px;
     text-overflow: ellipsis;
@@ -53,11 +48,6 @@
 }
 
 @media screen and (max-width: 320px) {
-  .footer {
-    grid-template-columns: 0.1fr;
-    max-width: 250px;
-  }
-
   .footer__paragraph {
     padding: 48px 41px 36px 0px;
   }

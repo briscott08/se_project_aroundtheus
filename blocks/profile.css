@@ -88,7 +88,6 @@
 @media screen and (min-width: 911px) {
   .profile__info {
     gap: 14px 10px;
-    padding-top: 32px;
     padding-left: 20px;
   }
 }
@@ -105,7 +104,6 @@
   .profile__title {
     text-align: center;
     font-size: 22px;
-    font-style: normal;
     line-height: normal;
     max-width: 200px;
   }
