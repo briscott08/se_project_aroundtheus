@@ -102,9 +102,7 @@
   }
 
   .profile__title {
-    text-align: center;
     font-size: 22px;
-    line-height: normal;
     max-width: 200px;
   }
 
@@ -113,9 +111,8 @@
     margin-bottom: 36px;
     text-align: center;
     font-size: 14px;
-    font-style: normal;
+
     font-weight: 400;
-    line-height: normal;
   }
 
   .profile__button-add {
