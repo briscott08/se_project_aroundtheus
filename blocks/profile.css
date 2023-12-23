@@ -22,6 +22,7 @@
 
 .profile__title {
   font-weight: 500;
+  font-style: normal;
   font-size: 42px;
   line-height: 48px;
   max-width: 380px;
@@ -79,15 +80,11 @@
 }
 
 .profile__button-add:hover {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: pointer;
 }
 @media screen and (min-width: 911px) {
   .profile__info {
-    display: grid;
-    grid-template-areas:
-      "title button"
-      "description description";
     gap: 14px 10px;
     padding-top: 26px;
     padding-left: 20px;
@@ -99,21 +96,14 @@
   }
 
   .profile__info {
-    display: grid;
-    grid-template-areas:
-      "title button"
-      "description description";
     gap: 14px 10px;
     padding-top: 26px;
   }
 
   .profile__title {
-    color: #fff;
     text-align: center;
-    font-family: Inter;
     font-size: 22px;
     font-style: normal;
-    font-weight: 500;
     line-height: normal;
     max-width: 200px;
   }
@@ -121,9 +111,7 @@
   .profile__description {
     text-align: center;
     margin-bottom: 36px;
-    color: #fff;
     text-align: center;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
