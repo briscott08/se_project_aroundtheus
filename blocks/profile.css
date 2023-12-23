@@ -45,6 +45,7 @@
   grid-area: button;
   align-self: center;
   transition: opacity 0.2s linear;
+  margin-top: 4px;
 }
 
 .profile__button-edit:hover {
@@ -83,10 +84,11 @@
   opacity: 0.5;
   cursor: pointer;
 }
+
 @media screen and (min-width: 911px) {
   .profile__info {
     gap: 14px 10px;
-    padding-top: 26px;
+    padding-top: 32px;
     padding-left: 20px;
   }
 }
