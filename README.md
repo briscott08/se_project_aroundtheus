@@ -7,6 +7,7 @@
 - Images - Worked with images and making them so that they work with the webpages and doesn't slow down the pages with large files.
 
 - [Link to my video description of the project - https://drive.google.com/file/d/12HJosCZZcIaMzNB9RAfLr7OKJCYHWyLt/view?usp=sharing]
+- [Link to my project - https://briscott08.github.io/se_project_aroundtheus]
 
 **Intro**
 
