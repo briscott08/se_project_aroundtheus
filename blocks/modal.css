@@ -67,14 +67,14 @@
   flex-shrink: 0;
 }
 
-.modal__form_title {
+.modal__title {
   margin-bottom: 30px;
   padding-bottom: 14px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.modal__form_description {
+.modal__description {
   margin-bottom: 0px;
   padding-bottom: 14px;
   border: none;
@@ -120,12 +120,12 @@
     width: 238px;
   }
 
-  .modal__form_title {
+  .modal__title {
     margin-bottom: 40px;
     padding-bottom: 13px;
   }
 
-  .modal__form_description {
+  .modal__description {
     margin-bottom: 0px;
     padding-bottom: 13px;
   }
