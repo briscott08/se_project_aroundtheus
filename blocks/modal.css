@@ -71,18 +71,15 @@
   flex-shrink: 0;
 }
 
-.modal__title {
+.modal__input {
   margin-bottom: 30px;
   padding-bottom: 14px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.modal__description {
+.modal__input:last-of-type {
   margin-bottom: 0px;
-  padding-bottom: 14px;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .modal__button {
@@ -90,7 +87,6 @@
   background-color: #000;
   color: #fff;
   height: 50px;
-  width: 360px;
   padding: 14px 125px 20px;
   text-align: center;
   font-family: Inter;
@@ -137,7 +133,6 @@
   .modal__button {
     margin-top: 45px;
     height: 46px;
-    width: 238px;
     padding: 14px 100px 14px;
   }
 }
