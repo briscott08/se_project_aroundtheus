@@ -70,6 +70,32 @@
       </div>
     </div>
 
+    <div class="modal" id="edit-modal">
+      <div class="modal__container">
+        <button class="modal__close" id="profile-edit-close-btn"></button>
+        <h3 class="modal__heading">New Place</h3>
+        <form class="modal__form">
+          <input
+            class="modal__input modal__input_type_title"
+            type="text"
+            name="title"
+            id="add-card-form"
+            placeholder="Title"
+          />
+          <input
+            class="modal__input modal__input_type_url"
+            type="text"
+            name="url"
+            id="add-card-url"
+            placeholder="Image Url"
+          />
+          <button class="modal__button" type="submit" value="Submit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
     <template id="card-template">
       <li class="card">
         <img src="" alt="" class="card__image" />
