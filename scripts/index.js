@@ -36,9 +36,13 @@ const initialCards = [
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
+const profilePreviewModal = document.querySelector(".modal_type_preview");
 const profileAddModal = document.querySelector("#add-modal");
 const profileEditButtonClose = profileEditModal.querySelector(
   "#profile-edit-close-btn"
+);
+const profilePreviewModalClose = document.querySelector(
+  "#profile-preview-close-btn"
 );
 const profileFormElement = profileEditModal.querySelector(".modal__form");
 const addCardFormElement = profileAddModal.querySelector(".modal__form");
@@ -81,12 +85,11 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
 
+  cardImageEl.addEventListener("click", () => onImagePreview(cardData));
+
   //find delete button
   //add the event listener to the delete button
   // cardElement.remove(); when the delete button gets clicked
-
-  // add click listener to the cardImage element, when the element +
-  // + gets clicked use openPopup (previewImageModal)
 
   // fade in/fade out modals
 
@@ -126,6 +129,12 @@ function handleAddCardFormSubmit(e) {
   closePopup(profileAddModal);
 }
 
+const onImagePreview = (cardData) => {
+  const imageModal = profilePreviewModal.querySelector(".modal__image");
+  imageModal.src = cardData.link;
+  openPopup(profilePreviewModal);
+};
+
 // ================ //
 // Event Listeners  //
 // ================ //
@@ -149,6 +158,10 @@ addNewCardButton.addEventListener("click", () => openPopup(profileAddModal));
 profileAddButtonClose.addEventListener("click", () =>
   closePopup(profileAddModal)
 );
+
+profilePreviewModalClose.addEventListener("click", () => {
+  closePopup(profilePreviewModal);
+});
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 

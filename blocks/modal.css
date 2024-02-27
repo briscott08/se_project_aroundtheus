@@ -101,6 +101,18 @@
   cursor: pointer;
 }
 
+.modal__container_preview {
+  padding: 0;
+  background: transparent;
+  max-height: 75vh;
+  max-width: 75vw;
+}
+
+.modal__image {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 @media screen and (max-width: 539px) {
   .modal__container {
     width: 252px;
