@@ -42,6 +42,9 @@
   border: none;
   cursor: pointer;
   z-index: 999;
+  position: absolute;
+  left: 250px;
+  top: 18px;
 }
 
 .modal__close {

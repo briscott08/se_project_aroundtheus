@@ -66,6 +66,8 @@ const cardTitleInput = addCardFormElement.querySelector(
 );
 const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
+const profileTrashButton = document.querySelector(".modal__delete");
+
 // =============== //
 // =============== //
 //    Functions    //
@@ -87,11 +89,9 @@ function getCardElement(cardData) {
 
   cardImageEl.addEventListener("click", () => onImagePreview(cardData));
 
-  //find delete button
-  //add the event listener to the delete button
-  // cardElement.remove(); when the delete button gets clicked
-
-  // fade in/fade out modals
+  profileTrashButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
