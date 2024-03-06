@@ -66,8 +66,6 @@ const cardTitleInput = addCardFormElement.querySelector(
 );
 const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
-const profileTrashButton = document.querySelector(".modal__delete");
-
 // =============== //
 // =============== //
 //    Functions    //
@@ -86,15 +84,16 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__name");
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
+  const profileTrashButton = cardElement.querySelector(".modal__delete");
 
   cardImageEl.addEventListener("click", () => onImagePreview(cardData));
 
-  profileTrashButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
+  });
+
+  profileTrashButton.addEventListener("click", () => {
+    cardElement.remove(cardData);
   });
 
   cardTitleEl.textContent = cardData.name;

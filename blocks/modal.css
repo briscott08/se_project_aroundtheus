@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  z-index: 999;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
@@ -41,7 +41,7 @@
   height: 19px;
   border: none;
   cursor: pointer;
-  z-index: 999;
+  z-index: 998;
   position: absolute;
   left: 250px;
   top: 18px;
