@@ -8,6 +8,7 @@
   width: 282px;
   height: 282px;
   border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
 }
 
 .card__description {
@@ -33,12 +34,28 @@
   line-height: normal;
 }
 
+.card__delete {
+  background-image: url(../images/Trash.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  width: 18px;
+  height: 19px;
+  border: none;
+  cursor: pointer;
+  z-index: 998;
+  position: absolute;
+  left: 250px;
+  top: 18px;
+}
+
 .card__like-button {
   background: transparent url(../images/Group.svg) no-repeat center;
   width: 21px;
   height: 18px;
   padding-left: 28px;
   border: 0;
+  cursor: pointer;
 }
 
 .card__like-button_active {

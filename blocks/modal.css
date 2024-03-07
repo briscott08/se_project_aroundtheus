@@ -9,13 +9,14 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  display: flex;
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
+  cursor: pointer;
 }
 
 .modal__container {
@@ -30,21 +31,6 @@
   width: 358px;
   height: 258px;
   padding: 36px;
-}
-
-.modal__delete {
-  background-image: url(../images/Trash.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: transparent;
-  width: 18px;
-  height: 19px;
-  border: none;
-  cursor: pointer;
-  z-index: 998;
-  position: absolute;
-  left: 250px;
-  top: 18px;
 }
 
 .modal__close {
