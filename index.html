@@ -94,6 +94,9 @@
             id="add-card-form"
             placeholder="Title"
           />
+          <span class="modal__error" id="add-card-form-error"
+            >Please fill out this field.</span
+          >
           <input
             class="modal__input modal__input_type_url"
             type="text"
@@ -101,7 +104,15 @@
             id="add-card-url"
             placeholder="Image Url"
           />
-          <button class="modal__button" type="submit" value="Submit">
+          <span class="modal__error" id="add-card-url-error"
+            >Please fill out this field.</span
+          >
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            value="Submit"
+            disabled
+          >
             Save
           </button>
         </form>
