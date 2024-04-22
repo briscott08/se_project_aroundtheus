@@ -56,7 +56,11 @@
             type="text"
             name="title"
             id="profile-title-input"
+            maxlength="40"
+            minlength="2"
+            required
           />
+          <span class="modal__error"></span>
           <input
             class="modal__input"
             type="text"
@@ -115,5 +119,6 @@
     </template>
 
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>
