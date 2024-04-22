@@ -1,9 +1,24 @@
+function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  inputEl.classList.add(inputErrorClass);
+  errorMessageEl.textContent = inputEl.validationMessage;
+  errorMessageEl.classList.add(errorClass);
+}
+
+function checkInputValidity(formEl, inputEl, options) {
+  if (!inputEl.validity.valid) {
+    showInputError(formEl, inputEl, options);
+  } else {
+    hideInputError(formEl, inputEl, options);
+  }
+}
+
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEl = [...formEl.querySelectorAll(inputSelector)];
   inputEl.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-      console.dir(inputEl.validity);
+      checkInputValidity(formEl, inputEl, options);
     });
   });
 }
@@ -24,7 +39,7 @@ const config = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
+  inputErrorClass: "modal__input_type_error",
   errorClass: "popup__error_visible",
 };
 

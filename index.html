@@ -50,9 +50,9 @@
       <div class="modal__container">
         <button class="modal__close" id="profile-edit-close-btn"></button>
         <h3 class="modal__heading">Edit Profile</h3>
-        <form class="modal__form">
+        <form class="modal__form" novalidate>
           <input
-            class="modal__input"
+            class="modal__input modal__input_type_error"
             type="text"
             name="title"
             id="profile-title-input"
@@ -60,13 +60,21 @@
             minlength="2"
             required
           />
-          <span class="modal__error"></span>
+          <span class="modal__error" id="profile-title-input-error"
+            >Please fill out this field.</span
+          >
           <input
             class="modal__input"
             type="text"
             name="description"
             id="profile-description-input"
+            maxlength="200"
+            minlength="2"
+            required
           />
+          <span class="modal__error" id="profile-description-input-error"
+            >Please fill out this field.</span
+          >
           <button class="modal__button" type="submit" value="Submit">
             Save
           </button>

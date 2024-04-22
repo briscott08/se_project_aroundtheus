@@ -81,14 +81,23 @@
 }
 
 .modal__input {
-  margin-bottom: 30px;
   padding-bottom: 14px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .modal__input:last-of-type {
+  margin-top: 30px;
   margin-bottom: 0px;
+}
+
+.modal__error {
+  color: rgba(255, 0, 0, 1);
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.5px;
+  opacity: 0;
 }
 
 .modal__button {
