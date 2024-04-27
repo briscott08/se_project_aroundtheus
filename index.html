@@ -52,7 +52,7 @@
         <h3 class="modal__heading">Edit Profile</h3>
         <form class="modal__form" novalidate>
           <input
-            class="modal__input modal__input_type_error"
+            class="modal__input"
             type="text"
             name="title"
             id="profile-title-input"
@@ -60,9 +60,7 @@
             minlength="2"
             required
           />
-          <span class="modal__error" id="profile-title-input-error"
-            >Please fill out this field.</span
-          >
+          <span class="modal__error" id="profile-title-input-error"></span>
           <input
             class="modal__input"
             type="text"
@@ -72,9 +70,10 @@
             minlength="2"
             required
           />
-          <span class="modal__error" id="profile-description-input-error"
-            >Please fill out this field.</span
-          >
+          <span
+            class="modal__error"
+            id="profile-description-input-error"
+          ></span>
           <button class="modal__button" type="submit" value="Submit">
             Save
           </button>
@@ -93,26 +92,21 @@
             name="title"
             id="add-card-form"
             placeholder="Title"
+            minlength="2"
+            maxlength="30"
+            required
           />
-          <span class="modal__error" id="add-card-form-error"
-            >Please fill out this field.</span
-          >
+          <span class="modal__error" id="add-card-form-error"></span>
           <input
             class="modal__input modal__input_type_url"
-            type="text"
+            type="url"
             name="url"
             id="add-card-url"
             placeholder="Image Url"
+            required
           />
-          <span class="modal__error" id="add-card-url-error"
-            >Please fill out this field.</span
-          >
-          <button
-            class="modal__button modal__button_disabled"
-            type="submit"
-            value="Submit"
-            disabled
-          >
+          <span class="modal__error" id="add-card-url-error"></span>
+          <button class="modal__button" type="submit" value="Submit">
             Save
           </button>
         </form>
