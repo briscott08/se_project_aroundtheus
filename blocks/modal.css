@@ -91,12 +91,17 @@
   margin-bottom: 0px;
 }
 
+.modal__input:invalid {
+  border-bottom: 1px solid red;
+}
+
 .modal__error {
   color: rgba(255, 0, 0, 1);
   font-family: Inter;
   font-weight: 400;
   font-size: 12px;
   line-height: 14.5px;
+  border-bottom: red;
 }
 
 .modal__button {
@@ -118,18 +123,12 @@
   cursor: pointer;
 }
 
-.modal__button_disabled {
-  margin-top: 40px;
+.modal__button_disabled:hover {
+  opacity: 0.2;
+  cursor: default;
+}
 
-  color: #fff;
-  height: 50px;
-  padding: 14px 125px 20px;
-  text-align: center;
-  font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.modal__button_disabled {
   border-radius: 2px;
   opacity: 20%;
 }
