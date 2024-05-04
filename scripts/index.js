@@ -73,21 +73,20 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", function (event) {
-    closeOnEscapeAndClick(event, profileEditModal);
-    closeOnEscapeAndClick(event, profilePreviewModal);
-    closeOnEscapeAndClick(event, profileAddModal);
-  });
-
-  document.addEventListener("click", function (event) {
-    closeOnEscapeAndClick(event, profileEditModal);
-    closeOnEscapeAndClick(event, profilePreviewModal);
-    closeOnEscapeAndClick(event, profileAddModal);
-  });
+  const eventHandler = function (event) {
+    closeOnEscapeAndClick(event, modal);
+  };
+  document.addEventListener("keydown", eventHandler);
+  document.addEventListener("click", eventHandler);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  const eventHandler = function (event) {
+    closeOnEscapeAndClick(event, modal);
+  };
+  document.removeEventListener("keydown", eventHandler);
+  document.removeEventListener("click", eventHandler);
 }
 
 function closeOnEscapeAndClick(event, modal) {

@@ -21,12 +21,12 @@ function checkInputValidity(formEl, inputEl, options) {
 }
 
 function hasInvalidInput(inputEl) {
-  let inputArray = Array.from(inputEl);
-  return inputArray.some((inputEl) => inputEl.validity.valid);
+  const inputArray = Array.from(inputEl);
+  return inputArray.some((inputEl) => !inputEl.validity.valid);
 }
 
 function toggleButtonState(inputEl, submitButton, { inactiveButtonClass }) {
-  if (!hasInvalidInput(inputEl)) {
+  if (hasInvalidInput(inputEl)) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
     return;
