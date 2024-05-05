@@ -71,27 +71,43 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 //    Functions    //
 // =============== //
 
+//Close modal function//
+//Close modal function//
+//Close modal function//
+
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", function (event) {
-    closeOnEscapeAndClick(event, modal);
-  });
-
-  document.addEventListener("click", function (event) {
-    closeOnEscapeAndClick(event, modal);
-  });
+  document.addEventListener("keydown", closeModalOnEscape);
+  modal.addEventListener("mousedown", closeModalOnMouseDown);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeOnEscapeAndClick);
+  document.removeEventListener("keydown", closeModalOnEscape);
+  modal.removeEventListener("mousedown", closeModalOnMouseDown);
 }
 
-function closeOnEscapeAndClick(event, modal) {
-  if (event.key === "Escape" || event.target === modal) {
-    closePopup(modal);
+function closeModalOnEscape(event) {
+  if (event.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
   }
 }
+
+function closeModalOnMouseDown(evt) {
+  if (
+    evt.target === evt.currentTarget ||
+    evt.target.classList.contains("modal__close")
+  ) {
+    closePopup(evt.target);
+  }
+}
+
+//Close modal function//
+//Close modal function//
+//Close modal function//
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
