@@ -1,3 +1,4 @@
+import Card from "../components/card.js";
 const initialCards = [
   {
     name: "Yosemite Valley",
