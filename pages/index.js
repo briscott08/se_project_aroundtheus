@@ -1,4 +1,5 @@
 import Card from "../components/card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -30,6 +31,17 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+const cardData = {
+  name: "Yosemite Valley",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+
+const CardInstance = new Card(
+  cardData.name,
+  cardData.link,
+  cardData.cardSelector
+);
 
 // ========= //
 // Elements  //
@@ -119,13 +131,13 @@ function getCardElement(cardData) {
 
   cardImageEl.addEventListener("click", () => onImagePreview(cardData));
 
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
+  // likeButton.addEventListener("click", () => {
+  //   likeButton.classList.toggle("card__like-button_active");
+  // });
 
-  profileTrashButton.addEventListener("click", () => {
-    cardElement.remove(cardData);
-  });
+  // profileTrashButton.addEventListener("click", () => {
+  //   cardElement.remove(cardData);
+  // });
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;

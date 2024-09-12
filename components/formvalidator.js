@@ -1,17 +1,21 @@
-// class formValidator {
-//   constructor(settings, formEl) {
-//     this._formEl = formEl;
-//   }
-// }
+class formValidator {
+  constructor(settings, formEl) {
+    this._inputSelector = settings.inputSelector;
+    this._submitButtonSelector = settings.submitButtonSelector;
+    this._inactiveButtonClass = settings.inactiveButtonClass;
+    this._inputErrorClass = settings.inputErrorClass;
+    this._errorClass = settings.errorClass;
+    this._form = formEl;
+  }
+}
 
 // const settings = {
-//   formSelector: ".modal__form",
-//   inputSelector: ".modal__input",
-//   submitButtonSelector: ".modal__button",
-//   inactiveButtonClass: "modal__button_disabled",
-//   inputErrorClass: "modal__input_type_error",
-//   errorClass: "popup__error_visible",
+//   this._inputSelector
+//   this._submitButtonSelector
+//   this._inactiveButtonClass
+//   this._inputErrorClass
+//   this._errorClass
 // };
 
-// const editFormValidator = new formValidator(settings, editForm);
-// const addFormValidator = new formValidator(settings, addForm);
+const editFormValidator = new formValidator(settings, editForm);
+const addFormValidator = new formValidator(settings, addForm);
