@@ -1,4 +1,5 @@
 import Card from "../components/card.js";
+import FormValidator from "../components/formvalidator.js";
 
 const initialCards = [
   {
@@ -140,13 +141,13 @@ function getCardElement(cardData) {
 
   cardImageEl.addEventListener("click", () => onImagePreview(cardData));
 
-  // likeButton.addEventListener("click", () => {
-  //   likeButton.classList.toggle("card__like-button_active");
-  // });
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
 
-  // profileTrashButton.addEventListener("click", () => {
-  //   cardElement.remove(cardData);
-  // });
+  profileTrashButton.addEventListener("click", () => {
+    cardElement.remove(cardData);
+  });
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
@@ -166,16 +167,16 @@ function handleProfileEditSubmit(e) {
   closePopup(profileEditModal);
 }
 
-// function renderCard(cardData, wrapper) {
-//   const cardElement = getCardElement(cardData);
-//   wrapper.prepend(cardElement);
-// }
+function renderCard(cardData, wrapper) {
+  const cardElement = getCardElement(cardData);
+  wrapper.prepend(cardElement);
+}
 
 function handleAddCardFormSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  // renderCard({ name, link }, cardListEl);
+  renderCard({ name, link }, cardListEl);
 
   closePopup(profileAddModal);
   addCardFormElement.reset();
