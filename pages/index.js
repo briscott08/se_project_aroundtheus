@@ -44,7 +44,8 @@ function createCard({ name, link }) {
       name,
       link,
     },
-    "#card-template"
+    "#card-template",
+    onImagePreview
   ).getView();
   return CardInstance;
 }
@@ -56,7 +57,7 @@ function renderCard(cardData, wrapper) {
 // ========= //
 // Elements  //
 // ========= //
-
+const imageModalCaption = document.querySelector(".modal__caption");
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profilePreviewModal = document.querySelector(".modal_type_preview");
@@ -75,7 +76,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
@@ -167,11 +168,6 @@ function handleProfileEditSubmit(e) {
   closePopup(profileEditModal);
 }
 
-function renderCard(cardData, wrapper) {
-  const cardElement = getCardElement(cardData);
-  wrapper.prepend(cardElement);
-}
-
 function handleAddCardFormSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
@@ -184,8 +180,9 @@ function handleAddCardFormSubmit(e) {
 
 const onImagePreview = (cardData) => {
   const imageModal = profilePreviewModal.querySelector(".modal__image");
-  imageModal.src = cardData.link;
-  imageModal.alt = `Photo of ${cardData.name}`;
+  imageModal.src = cardData._link;
+  imageModal.alt = `Photo of ${cardData._name}`;
+  imageModalCaption.textContent = cardData._name;
   openPopup(profilePreviewModal);
 };
 
@@ -217,3 +214,17 @@ profilePreviewModalClose.addEventListener("click", () => {
 });
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
+const editFormValidator = new FormValidator(settings, profileFormElement);
+const addFormValidator = new FormValidator(settings, addCardFormElement);
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
