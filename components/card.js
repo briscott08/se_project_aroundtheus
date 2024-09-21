@@ -13,8 +13,10 @@ export default class Card {
       .cloneNode(true);
     this._cardElement.querySelector(".card__name").textContent = this._name;
     this._cardElement.querySelector(".card__image").src = this._link;
+    this._cardElement.querySelector(
+      ".card__image"
+    ).alt = `Photo of ${this._cardElement.name}`;
     this._setEventListeners();
-
     return this._cardElement;
   }
 

@@ -39,7 +39,7 @@ const cardData = {
 };
 
 function createCard({ name, link }) {
-  const CardInstance = new Card(
+  const cardInstance = new Card(
     {
       name,
       link,
@@ -47,7 +47,7 @@ function createCard({ name, link }) {
     "#card-template",
     onImagePreview
   ).getView();
-  return CardInstance;
+  return cardInstance;
 }
 function renderCard(cardData, wrapper) {
   const cardElement = createCard(cardData);
@@ -125,36 +125,8 @@ function closeModalOnMouseDown(evt) {
     evt.target === evt.currentTarget ||
     evt.target.classList.contains("modal__close")
   ) {
-    closePopup(evt.target);
+    closePopup(evt.currentTarget);
   }
-}
-
-//Close modal function//
-//Close modal function//
-//Close modal function//
-
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardTitleEl = cardElement.querySelector(".card__name");
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  const profileTrashButton = cardElement.querySelector(".card__delete");
-
-  cardImageEl.addEventListener("click", () => onImagePreview(cardData));
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  profileTrashButton.addEventListener("click", () => {
-    cardElement.remove(cardData);
-  });
-
-  cardTitleEl.textContent = cardData.name;
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-
-  return cardElement;
 }
 
 // =============== //
@@ -181,7 +153,7 @@ function handleAddCardFormSubmit(e) {
 const onImagePreview = (cardData) => {
   const imageModal = profilePreviewModal.querySelector(".modal__image");
   imageModal.src = cardData._link;
-  imageModal.alt = `Photo of ${cardData._name}`;
+  imageModal.alt = `Photo of ${cardData.name}`;
   imageModalCaption.textContent = cardData._name;
   openPopup(profilePreviewModal);
 };
@@ -221,7 +193,6 @@ const settings = {
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "popup__error_visible",
 };
 
 const editFormValidator = new FormValidator(settings, profileFormElement);
