@@ -152,9 +152,9 @@ function handleAddCardFormSubmit(e) {
 
 const onImagePreview = (cardData) => {
   const imageModal = profilePreviewModal.querySelector(".modal__image");
-  imageModal.src = cardData._link;
+  imageModal.src = cardData.link;
   imageModal.alt = `Photo of ${cardData.name}`;
-  imageModalCaption.textContent = cardData._name;
+  imageModalCaption.textContent = cardData.name;
   openPopup(profilePreviewModal);
 };
 

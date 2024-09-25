@@ -102,6 +102,13 @@
   font-size: 12px;
   line-height: 14.5px;
   border-bottom: red;
+  position: absolute;
+  top: 146px;
+  left: 36px;
+}
+
+.modal__error:last-of-type {
+  top: 210px;
 }
 
 .modal__button {
