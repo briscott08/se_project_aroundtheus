@@ -61,6 +61,7 @@ const imageModalCaption = document.querySelector(".modal__caption");
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profilePreviewModal = document.querySelector(".modal_type_preview");
+const imageModal = profilePreviewModal.querySelector(".modal__image");
 const profileAddModal = document.querySelector("#add-modal");
 const profileEditButtonClose = profileEditModal.querySelector(
   "#profile-edit-close-btn"
@@ -151,7 +152,6 @@ function handleAddCardFormSubmit(e) {
 }
 
 const onImagePreview = (cardData) => {
-  const imageModal = profilePreviewModal.querySelector(".modal__image");
   imageModal.src = cardData.link;
   imageModal.alt = `Photo of ${cardData.name}`;
   imageModalCaption.textContent = cardData.name;
