@@ -168,10 +168,6 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
 });
 
-profileEditButtonClose.addEventListener("click", () =>
-  closePopup(profileEditModal)
-);
-
 profileFormElement.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
