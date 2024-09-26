@@ -146,9 +146,10 @@ function handleAddCardFormSubmit(e) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
-
   closePopup(profileAddModal);
   addCardFormElement.reset();
+  submitButtonSelector.disabled = true;
+  submitButtonSelector.classList.add("modal__button_disabled");
 }
 
 const onImagePreview = (cardData) => {
