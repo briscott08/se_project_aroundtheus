@@ -139,7 +139,7 @@ function handleProfileEditSubmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopup(profileEditModal);
-  editFormValidator._disableButton(handleProfileEditSubmit);
+  editFormValidator.disableButton(handleProfileEditSubmit);
 }
 
 function handleAddCardFormSubmit(e) {
@@ -149,7 +149,7 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closePopup(profileAddModal);
   addCardFormElement.reset();
-  addFormValidator._disableButton();
+  addFormValidator.disableButton(handleAddCardFormSubmit);
 }
 
 const onImagePreview = (cardData) => {
@@ -173,14 +173,6 @@ profileFormElement.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 addNewCardButton.addEventListener("click", () => openPopup(profileAddModal));
-
-profileAddButtonClose.addEventListener("click", () =>
-  closePopup(profileAddModal)
-);
-
-profilePreviewModalClose.addEventListener("click", () => {
-  closePopup(profilePreviewModal);
-});
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
